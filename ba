@@ -1,0 +1,39 @@
+{
+  "short_name": "Bridging.App",
+  "name": "Bridging Finance App - Comparison of Lenders, Rates and Products",
+  "description": "Bridging Finance App - Comparison of Lenders, Rates and Products",
+  "icons": [
+      {
+        "src":"l512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      },
+      {
+        "src":"l256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      },
+     {
+        "src":"l192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src":"l128.png",
+        "sizes": "128x128",
+        "type": "image/png"
+      }, 
+      {
+        "src":"l64.png",
+        "sizes": "64x64",
+        "type": "image/png"
+      }
+  ],
+  "start_url": "/",
+  "background_color": "#888",
+  "theme_color": "#536878",
+  "display": "standalone",
+  "orientation": "landscape",
+"prefer_related_applications": false
+}

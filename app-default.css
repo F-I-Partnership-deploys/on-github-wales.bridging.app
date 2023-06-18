@@ -1,0 +1,61 @@
+
+* {
+ font-size: 12pt;
+ font-family: Arial;
+}
+
+#appMenuL {
+color: white;
+text-decoration: underline;
+float:left;
+}
+
+#infogo {
+color: green;
+text-align: center;
+text-decoration: none;
+}
+
+#appMenuR {
+color: white;
+float:right;
+}
+
+#appMenuLogin {
+color: white;
+text-decoration: none;
+}
+
+header
+{
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+height: 20px;
+background-color: black;
+color: white;
+z-index:80;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  z-index:100;
+}
+
+footer>div {
+ font-size: 10pt;
+  color: white;
+text-align: center;
+}
+
+footer>div>a{
+ font-size: 10pt;
+ text-decoration: none;
+ color: white;
+ z-index: 100;
+}

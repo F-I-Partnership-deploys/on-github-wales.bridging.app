@@ -1,0 +1,230 @@
+
+<!DOCTYPE html><html lang="en"><meta charset="UTF-8"><head><link rel="manifest" href="ba"><script>
+
+let iDTSV = "2023-05-29 - 13:06";
+let BATSV = "2023-05-29 - 13:06";
+let sWTSV = "230529v2";
+let URLtoSW = "/SW" + sWTSV + ".js";
+
+function cl(tx){console.log(tx);}
+cl("Welcome to Bridging.App");
+cl("Bridging.App Ver: " + BATSV);
+function rSW() {
+  if ('serviceWorker' in navigator) {
+    cl("Attempting to register service worker...");
+    navigator.serviceWorker.register(URLtoSW).then(function (registration) {
+      var serviceWorker;
+      if (registration.installing) {
+        serviceWorker = registration.installing;
+        cl("Installing Service Worker Ver " + sWTSV);
+      } else if (registration.waiting) {
+        serviceWorker = registration.waiting;
+        cl("Service Worker Ver " + sWTSV + " is waiting");
+      } else if (registration.active) {
+        serviceWorker = registration.active;
+        cl("Service Worker Ver " + sWTSV + " is active");
+      }
+      if (serviceWorker) {
+        // logState(serviceWorker.state);
+        serviceWorker.addEventListener('statechange', function (e) {
+          // logState(e.target.state);
+        });
+      }
+    }).catch(function (err) {
+      cl("FAIL: ", err);
+    });
+  } else {
+    cl("This browser does not support Service Workers, you cannot install this on your device")
+  }
+};</script>
+<meta name="application-name" content="Bridging.App">
+<title>Bridging Companies' Rates, Loan Criteria & Products</title>
+<meta name="Description" content="Source a bridging loan for you or your client from our free database. No registration | Install on your device | Updated Daily | Compliant & Secure. Verified Lenders with full contact information.">
+<meta name="keywords" content="bridging finance, bridging loan, bridging loans, bridging loan, bridging loan comparison, compare bridging, compare bridging, compare bridging rates, compared bridging loans, compare bridging finance, compare bridging lenders, bridging loan companies, Bridging App" />
+<meta name="theme-color" content="#536878" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><link rel="icon" type="image/x-icon" href="favicon.ico"><link rel="apple-touch-icon" href="viapp0.png">
+<style>
+
+* {
+ font-size: 12pt;
+ font-family: Arial;
+}
+
+#appMenuL {
+color: white;
+text-decoration: underline;
+float:left;
+}
+
+#infogo {
+color: green;
+text-align: center;
+text-decoration: none;
+}
+
+#appMenuR {
+color: white;
+float:right;
+}
+
+#appMenuLogin {
+color: white;
+text-decoration: none;
+}
+
+header
+{
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+height: 20px;
+background-color: black;
+color: white;
+z-index:80;
+}
+
+#applicationDiv {
+display: none;
+width: 100%;
+background-color: black;
+color: white;
+margin-left: auto;  
+margin-right: auto;  
+position: fixed;
+left: 0;
+top:25px;
+position:sticky;
+z-index:60;
+}
+
+#criteriaDiv {
+display: none;
+width: 100%;
+background-color: black;
+color: white;
+margin-left: auto;  
+margin-right: auto;  
+position: fixed;
+left: 0;
+top:50px;
+position:sticky;
+z-index:40;
+}
+
+table {
+margin-left: auto;  
+margin-right: auto;
+position: fixed;
+left: 0;
+top:25px;
+position:sticky;
+z-index:40;
+}
+
+table>caption {
+display: none;
+}
+
+table thead {
+background-color: black;
+color: white;
+top:25px;
+position:sticky;
+text-align:center;
+z-index: 40;
+}
+
+table tbody{
+padding-bottom: 5em;
+}
+
+table tr {
+height: 40px;
+}
+
+table td:nth-child(1) {
+overflow: hidden;
+max-width: 120px;
+font-size: 10pt;
+z-index: 40;
+word-wrap: break-word;
+}
+
+table td:nth-child(2) {
+display: none;
+}
+
+table td:nth-child(3) {
+overflow: hidden;
+max-width: 220px;
+font-size: 10pt;
+z-index: 40;
+word-wrap: break-word;
+}
+
+.clear { clear: both; height: 60px; }
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  z-index:100;
+}
+
+footer>div {
+ font-size: 10pt;
+  color: white;
+text-align: center;
+}
+
+footer>div>a{
+ font-size: 10pt;
+ text-decoration: none;
+ color: white;
+ z-index: 100;
+}
+</style>
+<script>
+// Javascript for index.html (HTML SPA) invoked after First Contentful Paint / onPageLoad() / onHover/interaction
+
+// change Name to URL & linkable phone nos and emails
+function namesToLinks() {
+    let table, tr, i;
+    table = document.getElementById("iDT");
+    tr = table.getElementsByTagName("tr");
+    for (i = 1; i < tr.length; i++) {
+                  
+        var makeLink = table.rows[i].cells[1].innerHTML;
+        var makeLink2 = table.rows[i].cells[0].innerHTML;
+        var web = makeLink.link(table.rows[i].cells[1].innerHTML);
+        var web2 = makeLink2.link(table.rows[i].cells[1].innerHTML);
+        table.rows[i].cells[0].innerHTML = web2;
+        table.rows[i].cells[1].innerHTML = web;
+        }
+
+    }
+
+function pLF() {
+cl("Page Loaded");
+cl("Making names Links...");
+namesToLinks();
+cl("Done with links");
+
+var interfaceScript = document.createElement('script');
+interfaceScript.onload = function () {
+appInterface();
+};
+interfaceScript.src = "app-interface.js";
+document.head.appendChild(interfaceScript);
+}
+	
+</script>
+</head><body onload="pLF()"><header><a id="appMenuL" href="index.html">/| BA |\</a><span><a  id="infogo" href="en-legal-data-rights-minimal.html">  - Your data is not collected by us by default.</a> </span><span id="appMenuR"><a id="appMenuLogin" href="app-login.html">Login</a></span></header><content><div id="applicationDiv" >Application (No sensitive data entered or saved)</div><div id="criteriaDiv">Criteria (No sensitive data entered or saved)</div><div id="dataDiv"><br><table id="iDT" border=1 frame=void rules=rows><caption>Bridging.App Data</caption><caption>No data stored by us to view, we ask otherwise.<a href="en-legal-data-rights-minimal.html">+info</a> &nbsp; <span>close notice</span></caption><caption><a href="en-compliance-default-warning.html">Your home/assets are at risk if you fail to keep to loan terms.</a> <span>close warning</span></caption><thead><tr ><td>Name</td><td>Website</td><td>Description</td></tr></thead><!----->
+
+<tbody><tr><td>Alternative Bridging Corporation</td><td>https://alternativebridging.co.uk</td><td>We provide made-to-measure bridging loans, development finance and specialist lending to the property industry, business community and homeowners.</td></tr><tr><td>Market Financial Solutions (MFS)</td><td>https://www.mfsuk.com</td><td>We’re here to tailor our Bridging Loans and Buy-to-Let Mortgages to suit your financial needs. We move swiftly so that you are able to take advantage of property investment opportunities.</td></tr><tr><td>Hilltop credit Partners</td><td>https://www.hilltopcreditpartners.com</td><td>Build better with purpose. Hilltop Credit Partners is a leading Pan-European credit investment manager focused on real estate finance strategies. We are sector agnostic and committed to supporting flexible funding solutions across the capital structure for...</td></tr><tr><td>Together</td><td>https://togethermoney.com</td><td>Varied Product Selection</td></tr><tr><td>MT Finance</td><td>https://www.mt-finance.com</td><td>MT Finance is a leading property finance lender, specialising in bridging loans and auction finance. Since we were set up in 2008, we are proud to have assisted numerous property professionals, business owners, and individuals with their finance requiremen...</td></tr><tr><td>Mercantile Trust</td><td>https://www.mercantiletrust.co.uk</td><td>Common sense lending. No automated lending decisions. We can help with all sorts of scenarios, from buying your first rental property, to purchasing or remortgaging as an experienced investor; or whether your case is straightforward, or you have a complex ...</td></tr><tr><td>LINUS Digital Finance</td><td>https://www.linus-finance.co.uk</td><td>? where is the lending proposition ?</td></tr><tr><td>Hampshire Trust Bank</td><td>https://www.htb.co.uk</td><td>Hampshire Trust Bank (HTB) serves a small number of carefully chosen markets. Through a cycle of research and continuous improvement, coupled with expert people who are leaders in their fields, we maintain a profound understanding of these markets. This in...</td></tr><tr><td>ingenious Real Estate</td><td>https://www.theingeniousgroup.co.uk</td><td>The Ingenious Real Estate team has extensive experience of providing debt and equity capital to experienced, mid market developers in the residential, commercial and mixed use sectors, benefiting from a wide range of commercial relationships built up over ...</td></tr><tr><td>PCF Bank</td><td>https://pcf.bank</td><td>Established in 1994, PCF Bank has helped more than 100,000 customers with the finance of their vehicles, plant &amp; equipment. Our success in this area is based on two propositions: that finance should be simple, and that a high level of customer service is p...</td></tr><tr><td>Precise Mortgages</td><td>https://www.precisemortgages.co.uk</td><td>We’re award-winning. Precise Mortgages has been awarded several high profile industry awards for leading technology, service, and innovation.</td></tr><tr><td>Pivot</td><td>https://www.pivotfinance.co.uk</td><td>We offer short-term finance for a range of property development  purposes, enabling our clients to progress their business objectives. At Pivot, we are passionate about providing our clients with the financial independence they require to fulfil their busi...</td></tr><tr><td>Nester</td><td>https://nester.com</td><td>Platform</td></tr><tr><td>The Bridging Group</td><td>https://www.bridging.group</td><td>FLEXIBILITY. TRANSPARENCY. HELPFULNESS. We lend using a diverse funding base, including our own funds and private equity. This enables our team to provide flexible finance that is matched specifically to your needs.</td></tr><tr><td>Pluto Finance</td><td>https://pluto-finance.com</td><td>Pluto is a leading provider of smarter finance for UK property developers and investors. With our highly experienced team we have lent over £3bn since 2011. We pride ourselves on building long-term relationships and providing a fast turnaround for our clie...</td></tr><tr><td>Aspen Bridging</td><td>https://www.aspenbridging.co.uk</td><td>We offer Bridging, Light Development &amp; Bridge to Let loans of up to £10m across England &amp; Wales. Aspen's focus is on delivering excellent customer service together with a transparent pricing &amp; quoting structure.</td></tr><tr><td>United Trust Bank</td><td>https://www.utbank.co.uk</td><td>We understand specialist lending. United Trust Bank is an established specialist lender providing a wide range of funding solutions for businesses and individuals.</td></tr><tr><td>Avamore Capital</td><td>https://avamorecapital.com</td><td>Avamore takes a developer centric approach and continually strives for the best on behalf of its partners. It is committed to creating a customer experience that makes the process easy, efficient and will always accommodate to the specific circumstances su...</td></tr><tr><td>Coldunell Finance</td><td>https://coldunellfinance.co.uk</td><td>Bespoke Bridging &amp; Development Finance. est.1956.</td></tr><tr><td>Moody Venture Capital</td><td>https://mvcfinance.co.uk</td><td>60 YEARS EXPERIENCE. Moody Venture Capital LLP, an established residential property finance lender. In-house funds available to assist property development loans for new house building developments. Moody Venture Capital provides loans between £500,000 (fo...</td></tr><tr><td>Lendhub</td><td>https://lendhub.co.uk</td><td>Like many lenders, we can get you the funds you need quickly. What makes us different is our streamlined process, offering more digitisation and automation, but with the added bonus of human touch. Our team is committed to creating a customer experience th...</td></tr><tr><td>Lendlord</td><td>https://lendlord.io</td><td>Platform</td></tr><tr><td>Social Money Limited (SoMo)</td><td>https://www.somo.co.uk</td><td>Built on evolutionary thinking since its inception in 2014, SoMo, a family-owned business, pioneered the crowd funding formula that allows Borrowers and Investors to bypass the more traditional lending and investing channels and help each other through fin...</td></tr><tr><td>Assetz Capital</td><td>https://www.assetzcapital.co.uk</td><td>As one of the country’s leading business lenders, we’ve provided property-secured finance since 2013, helping UK SMEs, property developers and house-builders access Real World Lending. Using cutting-edge financial technology, and our own property expertise...</td></tr><tr><td>Lendinvest</td><td>https://www.lendinvest.com</td><td>Property finance made simple. The leading asset management platform providing bridging loans, development finance, and buy-to-let mortgages for intermediaries, landlords and developers across the UK.</td></tr><tr><td>Tuscan Capital</td><td>https://www.tuscancapital.co.uk</td><td>Combining traditional lending standards with progressive commercial thinking, we are a well-established provider of flexible short-term bridging solutions to the U.K. property sector. At Tuscan Capital, our perennial focus is on personalised customer servi...</td></tr><tr><td>Paragon Bank PLC</td><td>https://www.paragonbank.co.uk</td><td>It’s good to know you’re in the right place. With our wide range of competitive and flexible finance options we’re confident we can build a finance package that meets your needs. We can support a range of funding requirements. From pre-planning and bridgin...</td></tr><tr><td>Atelier</td><td>https://atelierfinance.co.uk</td><td>Better property finance, by design. Bespoke loan solutions structured to drive your vision forward.</td></tr><tr><td>Octopus Real Estate</td><td>https://octopus-realestate.com</td><td>Real estate lending We lend at every stage of a building’s life. This runs from land acquisition, through to development, ongoing renovation work and re-development. Our development, commercial and residential teams work together to deliver value, with a r...</td></tr><tr><td>Spring Finance</td><td>https://springfinance.co.uk</td><td>Spring Finance was established in 2011 as a second charge mortgage lender, lending to customers who may not always meet the criteria of high street banks and building societies. It is authorised and regulated by the Financial Conduct Authority for regulate...</td></tr><tr><td>Crowd With Us</td><td>https://www.crowdwithus.london</td><td>Property Loans. Building your visions and building your investments has never been easier than with Crowd with Us. The investments on this website are only available to our registered investors who meet certain net worth or investment sophistication criter...</td></tr><tr><td>Beaufort Capital</td><td>https://www.beaufortcapital.co.uk</td><td>Beaufort provides multiple award-winning swift and versatile development finance to proven property developers. Our senior, stretched senior, mezzanine and equity funding allows developers to realise their vision and maximise their returns. Our team has be...</td></tr><tr><td>Salboy Build Partner</td><td>https://salboybuildpartner.co.uk</td><td>We provide 100% funding for UK developments, for up to £10 Million, covering acquisition through to build.</td></tr><tr><td>Whitehall Capital</td><td>https://whitehalllending.com</td><td>We are a specialist provider of bridge, short-term, auction and development finance solutions – 100% privately funded, with more than a decade in the market. Our experienced team work to deliver short term, flexible and bespoke property funding solutions a...</td></tr><tr><td>Crowd Property</td><td>https://www.crowdproperty.com</td><td>CrowdProperty offers a full suite of property project funding, catering for all your project finance needs including development finance, refurbishment finance, bridging finance, development exit finance and auction finance. We will review any situation an...</td></tr><tr><td>Commercial Acceptances</td><td>https://www.acceptances.co.uk</td><td>Commercial Acceptances has been providing short term property finance loans since 1983. We understand our market and offer fast, flexible finance.</td></tr><tr><td>Tenn Capital</td><td>https://tenn.capital</td><td>BRIDGING FINANCE FOR COMPLEX SENARIOS. Tenn capital offer short-term, real estate backend lending solutions for international, unusual or time-sensitive transactions.</td></tr><tr><td>Interbay</td><td>https://www.interbay.co.uk</td><td>With our extensive market knowledge and expert teams, we’re here to work in partnership with you to support bespoke solutions for your clients.</td></tr><tr><td>The Property Box Loan Company</td><td>https://www.propertyboxloan.co.uk</td><td>Based in the West End of London, our team has substantial experience in property funding and development across the UK. It is important to us to build long term relationships with developers and are happy to look at requirements ranging from a modest £200,...</td></tr><tr><td>KSEYE</td><td>https://kseye.co.uk</td><td>Flexible products offering loans between £150,000 and £25m for residential, commercial and mixed-use property investments throughout England &amp; Wales.</td></tr><tr><td>Virdis Finance</td><td>https://www.viridisfinance.com</td><td>Viridis Finance was created to fund and promote environmentally and socially responsible residential development projects across the UK.</td></tr><tr><td>TFG Capital</td><td>https://www.tfgcapital.co.uk</td><td>TFG is short for ‘The Funding Gap’. We aim to provide our clients with tailored short term business loans that will fulfil their individual needs such as bridging loans or cash flow finance. Our terms are flexible and we can work to extremely tight deadlin...</td></tr><tr><td>Puma Property Finance</td><td>https://pumapropertyfinance.co.uk</td><td>Welcome to Puma Property Finance. With over £1bn of property loans and construction projects under our belts, we are reliable funding partners to professional developers around the UK and across a range of sectors.</td></tr><tr><td>Fairbridge Capital</td><td>https://fairbridgecapital.co.uk</td><td>We pride ourselves on being a fast and flexible lender, with a commitment to delivering specialised, short term finance. In an ever changing world, it is important that lenders adapt, which is why our in house specialists enjoy the challenge of identifying...</td></tr><tr><td>Catalyst</td><td>https://catalystpf.co.uk</td><td>We’re here to make sure you never miss a good opportunity. Catalyst is a principal lender of specialist property finance. We provide bridging, refurbishment, ‘super heavy’ refurbishment, development exit, auction purchase, ‘FLEX’ bridging, commercial bridg...</td></tr><tr><td>Goldentree</td><td>https://goldentreefs.co.uk</td><td>Goldentree is a short term secured property lender. Our products provide funding from £100K - £10M for projects and properties in mainland UK. We provide both development finance and bridging loans.</td></tr><tr><td>Roma Finance</td><td>https://romafinance.co.uk</td><td>At Roma Finance we understand that every property transaction is unique. That’s why we put flexibility at the forefront of everything we do. We have introduced #RomaFLOW – a fast new bridging channel designed for minimal hassle and quick completions.</td></tr><tr><td>Century Capital</td><td>https://www.centurycapital.co.uk</td><td>Prime. Property. Finance. It’s what Century do. We deliver fast, flexible finance across a diverse range of short-term loan products. As a leading lender in the prime property sector, we provide expert service and certainty of funding, even for complex loa...</td></tr><tr><td>Blackfinch Property</td><td>https://blackfinchproperty.com</td><td>Supporting Developers Nationwide. We’re a fully funded provider of short-term bridging and development financing solutions. As an independent company, we’re efficient and flexible. We take a pragmatic approach to provide cash quickly, and with more certain...</td></tr><tr><td>Kufflink</td><td>https://www.kuflink.com</td><td>Platform</td></tr><tr><td>Shawbrook Bank</td><td>https://www.shawbrook.co.uk</td><td>The right finance support for your business, right when you need it. Whether it’s replacing essential equipment or investing for growth, when it comes to funding the things that matter to your business, we understand that speed, flexibility and certainty a...</td></tr><tr><td>Glenhawk</td><td>https://glenhawk.com</td><td>The talent and dedication of the people working at Glenhawk makes everything we do possible. We work hard to optimise our knowledge and experience, allowing us to give a fresh and courageous outlook in an industry we are incredibly passionate to work in.</td></tr><tr><td>West One Loans</td><td>https://www.westoneloans.co.uk</td><td>We’re a leading provider of specialist mortgages and property finance, helping homeowners, landlords and property investors achieve their financial goals. We specialise in creating integrated lending solutions across the property investment lifecycle, enco...</td></tr><tr><td>Blend</td><td>https://blendnetwork.com</td><td>POWERING PEACE OF MIND. Development finance is a complex process. You want it to be delivered by people with deep property expertise who can guide you through challenges and provide solutions.</td></tr><tr><td>Bloomsmith</td><td>https://bloomsmith.co.uk</td><td>VAT Funding. Fast, simple, effective commercial property solutions For developers, investors and owner-occupiers, brokers For estate agents, solicitors, accountants and their clients No 2nd legal charge required</td></tr><tr><td>CapitalRise</td><td>https://www.capitalrise.com</td><td>Platform</td></tr></tbody>
+
+<!-----></table><br></div></content><div class="clear"></div><footer><div><a href="en-compliance-default-warning.html">Your home/assets are at risk if you fail to keep to loan terms.</a></div><div><a href="en-about-fi.html">F-I.dev partnership</a> <a href="en-legal-copyright.html"> &copy; 2023</a> |<a href="en-legal-spa-website-terms-of-use.html"> terms</a> | <a href="en-legal-data-rights-minimal.html">privacy</a> | <a href="en-about-app.html">about</a> | <a href="en-contact.html">contact</a></div><footer><script>rSW();</script></body>
+</html>
