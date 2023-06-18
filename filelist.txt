@@ -47,6 +47,11 @@ robots.txt
 sitemap.xml						Sitemap for Bing
 
 
+//GITHUB
+
+README.md
+LICENSE.md
+.gitnore
 
 
 
