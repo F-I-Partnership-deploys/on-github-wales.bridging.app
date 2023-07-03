@@ -1,3 +1,5 @@
+// Ctrl C + V > index.html
+
 function rSW() {
   if ('serviceWorker' in navigator) {
     cl("Attempting to register service worker...");
@@ -27,13 +29,5 @@ function rSW() {
   }
 };
 
-function pLF() {
-cl("Page Loaded");
+// -------------------- Index End -------------------- 
 
-var interfaceScript = document.createElement('script');
-interfaceScript.onload = function () {
-appInterface();
-};
-interfaceScript.src = "app-interface.js";
-document.head.appendChild(interfaceScript);
-}

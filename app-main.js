@@ -1,26 +1,51 @@
-// Javascript for index.html (HTML SPA) invoked after First Contentful Paint / onPageLoad() / onHover/interaction
+cl("Starting Main App Code");
+// Main App Code
 
-// change Name to link
-function namesToLinks() {
-    let table, tr, i;
-    table = document.getElementById("iDT");
-    tr = table.getElementsByTagName("tr");
-    for (i = 1; i < tr.length; i++) {
-                  
-        var makeLink = table.rows[i].cells[1].innerHTML;
-        var makeLink2 = table.rows[i].cells[0].innerHTML;
-        var web = makeLink.link(table.rows[i].cells[1].innerHTML);
-        var web2 = makeLink2.link(table.rows[i].cells[1].innerHTML);
-        table.rows[i].cells[0].innerHTML = web2;
-        table.rows[i].cells[1].innerHTML = web;
-        }
 
+
+// (A) GET HTML TABLE
+let table = document.getElementById("datafromcsv");
+
+function pLD(px) {
+// (B) AJAX FETCH CSV FILE
+fetch(px)
+.then(res => res.text())
+.then(res => csvData = res)
+.then(csv => {
+  table.innerHTML = "";
+  for (let row of CSV.parse(csv)) {
+    let tr = table.insertRow();
+    for (let col of row) {
+      let td = tr.insertCell();
+      td.innerHTML = col;
     }
-
-
-function pLF() {
-cl("Page Loaded");
-cl("Making names Links...");
-namesToLinks();
-cl("Done with links");
+  }
+});
 }
+
+// -------------------- End of file -------------------- 
+  if (autorun){
+cl('...autorun');
+  pLD(dLS);
+cl('data should be loaded');
+  setTimeout(() => {
+    pLF();
+    cl('Links Done First Round');
+    sorta(document.getElementById("iDT"));  
+    cl('SortA should be done');
+  }, 1000);
+}else{
+    cl('No need to autorun');
+}
+
+function rmiDT(){
+const element = document.getElementById("iDT");
+element.remove(); // Removes thetable with the 'iDT' id
+}
+
+//rmiDT();
+//goxl();
+//createGrid();
+
+
+cl("Reached End of app-main.js");

@@ -1,0 +1,55 @@
+
+/* (A) SORTABLE TABLE */
+.sorta { border-collapse: collapse; }
+
+.sorta thead *::selection { 
+  background: none;
+}
+
+/* (D) BODY */
+.sorta tbody tr:nth-child(even) {
+  background: lightgray;
+}
+
+/* (E) UP/DOWN COLORS */
+.sortup { color: lightblue; 
+         text-decoration: underline;
+        }
+.sortdown { color: lightgreen; 
+           text-decoration: underline;
+          }
+
+
+.tableTop {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 3rem;
+  overflow-x: auto;
+}
+
+table {
+    * {
+        border: none;
+    }
+    white-space: nowrap;
+
+
+    tbody {
+        tr:nth-child(odd) td {
+            background: white;
+        }
+
+        tr:nth-child(even) td {
+            background: lightgray;
+        }
+        td {
+            text-align: left;
+            padding: 3rem 3rem;
+        }
+    }
+  
+  tr>th:first-child,tr>td:first-child {
+    position: sticky;
+    left: 0;
+  }
+}

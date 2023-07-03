@@ -29,15 +29,13 @@ The hope in publishing to GitHub is manyfold:
 
 
 
-HELPER FILES
-------------
-Sheetrock.min.js    Chris Z https://chriszarate.github.io/sheetrock/
-jquery.min.js       /*! jQuery v3.1.0 | (c) jQuery Foundation | jquery.org/license */   
-papaparse.min.js    Papa Parse | v5.3.1 | https://github.com/mholt/PapaParse | License: MIT */
-
-Heper files are included (as opposed to beingg served from a CDN) to ensure all files are served from the same origin.
-
+Included Libraries
+------------------
+csv.min.js          https://code-boxx.com/ MIT
+sorta.css           https://code-boxx.com/ MIT
+sorta.js            https://code-boxx.com/ MIT
+workbox-sw.js       Google
 
 
-app-uk-live-sr3* files are used to create the HTML for the index file
-app-status* files are to be intergrated into the app to give status info for the collection of sites
+
+Heper files are included (as opposed to being served from a CDN) to ensure all files are served from the same origin.
