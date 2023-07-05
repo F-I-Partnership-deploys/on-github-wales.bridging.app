@@ -5,7 +5,7 @@ const varVer = "2023-07-02";			// Version for announcment
 const BATSV = "2023-07-02 - 14:21";	// BATimeStampVer 
 const sWTSV = "230702";			// serviceWorkerTimeStampVer 
 const URLtoSW = "/sw" + sWTSV + ".js";
-var dLS = ukGoogleCSV; // Pick CSV Source from app-datasets.js or URL String of own source
+var dLS = walesGoogleCSV; // Pick CSV Source from app-datasets.js or URL String of own source
 // -------------------- End index section --------------------
 
 var autorun = false;
