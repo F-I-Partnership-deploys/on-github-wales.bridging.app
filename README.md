@@ -34,7 +34,7 @@ Included Libraries
 csv.min.js          https://code-boxx.com/ MIT
 sorta.css           https://code-boxx.com/ MIT
 sorta.js            https://code-boxx.com/ MIT
-workbox-sw.js       Google
+workbox-sw.js       Google                 MIT
 
 
 

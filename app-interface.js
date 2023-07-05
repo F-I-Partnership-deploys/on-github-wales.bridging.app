@@ -1,3 +1,5 @@
+//Code Copyright 2003 F-I.dev & Bridging.app MIT Licensed see LICENSE.md
+
 // Ctrl C + V > index.html
 function cl(tx) { console.log(tx); }
 cl("Welcome to the Bridging.App");
